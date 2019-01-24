@@ -1,0 +1,71 @@
+# First draft of MadLibs program
+
+class Madlibs
+
+  $propnoun = Array.new()
+  $normnouns = Array.new()
+  $verb_array = Array.new()
+  $adjective_array = Array.new()
+  
+  puts "Welcome to Mad Libs."
+  puts "I'm going to ask you to enter some information, pick a story, and see what the results are!"
+  puts "Please enter 10 proper nouns then press enter.  Proper nouns are used for names, places, organisations etc.)"
+  proper_noun = gets.chomp().split()
+  $propnoun = proper_noun
+  puts "Please enter 10 nouns then press enter.  Examples of nouns that are not proper include hand, dog, home"
+  nouns = gets.chomp().split()
+  $normnouns = nouns
+  puts "Please enter 10 verbs then press enter.  Verbs are words that describe actions, occurrences or states of being."
+  verbs = gets.chomp().split()
+  $verb_array = verbs
+  puts "Please enter 10 adjectives then press enter.  Adjectives are describing words."
+  adjectives = gets.chomp().split()
+  $adjective_array = adjectives
+  
+  def story1
+    puts "Once upon a time there was a " + $adjective_array.sample()+" " + $propnoun.sample()+" who lived in a giant " +$normnouns.sample + ".  One day, a " +$normnouns.sample+ " came to visit."
+    puts "They brought news about a " +$normnouns.sample()+ " in a nearby " +$propnoun.sample()+".  The "+$propnoun.sample()+" was very "+$adjective_array.sample()+ " to hear such interesting news and quickly made plans to visit the "+$propnoun.sample()+"."
+    puts "Before they arrived, a ghastly "+$normnouns.sample()+" leaped out in front of their carriage.  The "+$normnouns.sample()+" demanded all of their "+$normnouns.sample()+"."
+    puts ""
+    puts "It was then that a "+$adjective_array.sample()+" "+$normnouns.sample()+" appeared as if out of nowhere and chased away the "+$normnouns.sample()+"."
+    puts "The " +$propnoun.sample()+ " and the "+$adjective_array.sample()+" "+$normnouns.sample()+" decided to throw a grand party to celebrate."
+    puts "The End."
+  end
+  
+  def story2
+    puts "Two " +$normnouns.sample()+"s, both alike in dignity,"
+    puts "(In fair "+$propnoun.sample()+", where we lay our scene,)"
+    puts "From ancient "+$normnouns.sample()+" break to new mutiny,"
+    puts "Where civil blood makes civil hands unclean."
+    puts "From forth the fatal loins of these two foes"
+    puts "A pair of "+$adjective_array.sample()+"`d "+$normnouns.sample()+"'s take their life;"
+    puts "Whole misadventured piteous overthrows"
+    puts "Doth with their "+$normnouns.sample()+" bury their parents`strife."
+    puts "The fearful passage of their "+$adjective_array.sample()+ "-marked love,"
+    puts "And the continuance of their parents` rage,"
+    puts "Which, but their children`s end, nought could "+$verb_array.sample()+","
+    puts "Is now the two hours` traffic of our stage;"
+    puts "The which, if you with "+$adjective_array.sample()+" ear attend,"
+    puts "What here shall "+$verb_array.sample()+", our toil shall strive to mend." 
+  end
+  
+  def story3
+    puts "There is a path through the willows and among the sycamores, a"
+    puts $normnouns.sample()+""+$verb_array.sample()+" hard by boys coming down from the "+$normnouns.sample()+" to "+$verb_array.sample()+" in the"
+    puts $adjective_array.sample()+" "+$normnouns.sample()+", and beaten hard by tramps who come wearily down from the"
+    puts "highway in the evening to jungle-up near "+$normnouns.sample()+". In front of the low"
+    puts "horizontal limb of a giant "+$normnouns.sample()+" there is an ash pile made by"
+    puts "many fires; the "+$normnouns.sample()+" is worn smooth by men who have sat on it." 
+  end
+
+  
+  puts "Please choose your story.  Enter 1, 2, or 3 and press enter."
+  story_number = gets.chomp().to_i
+  if story_number == 1
+    puts story1
+    elsif story_number == 2
+      story2
+    elsif story_number == 3
+      story3
+  end
+end
